@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="assets/jquery.min.js"></script>
+<script src="assets/qrcode.min.js"></script>
+
+<script>
+    function gerador() {
+        texto = document.getElementById("texto").value;
+
+        new QRCode(document.getElementById('qrcode'),{
+            text: texto,
+            width: 300,
+            height: 300,
+            colorDark: '#000000',
+            colorLigth: '#ffffff',
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    }
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>Gerador de Qrcode</title>
+</head>
+<body>
+
+<p>Texto para o Qrcode</p>
+<input type="text" id="texto">
+
+<button onclick="gerador()">Gerar</button>
+
+<div id="qrcode"></div>
+
+</body>
+</html>
